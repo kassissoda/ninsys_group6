@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スクロール連動サイト</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .left,
+        .right {
+            width: 50%;
+        }
+
+        .left {
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .right {
+            margin-left: 50%;
+            padding: 20px;
+            background: #fff;
+            overflow-y: scroll;
+            font-size: 2rem;
+            line-height: 3rem;
+            height: 100vh;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left">
+        <img id="dynamicImage" src="img1.png" alt="Dynamic Image">
+    </div>
+    <div class="right">
+        <div class="section" data-start-image="1" data-end-image="6">Once upon a time, there was a beautiful statue of "the Prince of happiness" in a town. The body of "the Prince of
+        happiness" was coated with glittering gold leaf.</div>
+        <div class="section" data-start-image="7" data-end-image="12">Its blue eyes were made of sapphire and the sword on its waist had a big ruby on it. The townspeople wished themselves
+        happiness as this beautiful Prince represented.</div>
+        <div class="section" data-start-image="13" data-end-image="18">In the evening of a cold day when the winter was just around the corner, a swallow flew to the town. “Phew! I'm left far
+        behind. I wonder if my fellows have already arrived in Egypt. I'll rest here and hit the road tomorrow.”</div>
+        <div class="section" data-start-image="19" data-end-image="24">The swallow perched on the Prince's foot and tried to sleep there. Then, some waterdrops fell onto him.</div>
+        <div class="section" data-start-image="97" data-end-image="102">“Is it raining? It’s strange because there’s no cloud in the sky… Oh, the Prince is crying. Hello, what’s the matter?”
+        The swallow asked and then the Prince answered, “Since I’ve been up here, I can see the sad things happening all over
+        the town. But there’s nothing I can do to help them. So I’m crying.”</div>
+        <div class="section" data-start-image="25" data-end-image="30">“Sad things?” “See the small house there? The boy is sick and crying, saying he wants to eat some oranges. Though his
+        mother works hard, she can’t afford them.”</div>
+        <div class="section" data-start-image="31" data-end-image="36">“Oh, poor thing.” “Mr. Swallow, please do me a favor. Can you bring the ruby on my sword to him?”</div>
+        <div class="section" data-start-image="37" data-end-image="42">“Sure. I’ll do it.” The swallow removed the ruby from the sword on the Prince’s waist and put it beside his pillow.</div>
+        <div class="section" data-start-image="43" data-end-image="48">“I know you’ve been through a hard time, but hang in there.” The swallow fanned his wings at him and flew back.</div>
+        <div class="section" data-start-image="49" data-end-image="54">When he returned to the Prince, the swallow noticed something different. “It’s strange. It’s so cold out here but I feel
+        warm.”</div>
+        <div class="section" data-start-image="55" data-end-image="60">“It’s because you did a good deed, Mr. Swallow.” The next day, the Prince asked the swallow a favor again.</div>
+        <div class="section" data-start-image="61" data-end-image="66">“Can you bring one of the sapphires in my eyes to a poor and talented young guy?” “But it’s about time for me to leave
+        now.”</div>
+        <div class="section" data-start-image="67" data-end-image="72">“I’m begging you. Just this once. Please, Mr. Swallow.” “Ok…”</div>
+        <div class="section" data-start-image="73" data-end-image="78">When the swallow brought the sapphire, the young guy was so glad with his starry eyes. “Now I can buy some bread! I can
+        finish writing my book!”</div>
+        <div class="section" data-start-image="79" data-end-image="84">The next day, the swallow finally decided to hit the road. And he said goodbye to the Prince.</div>
+        <div class="section" data-start-image="85" data-end-image="90">“Prince, I’m going to Egypt where there are my fellows. Egypt is so warm and has a lot of sunshine.” But the Prince
+        asked the swallow a favor again.</div>
+        <div class="section" data-start-image="91" data-end-image="96">“Can you please stay one more night? There is a girl who tries to sell matches in the street. She knew she was going to
+        be hit by his father if she didn’t make money, but she dropped all the matches she had. So, I want you to bring the
+        other sapphire to her.” “In that case, you will be blind, Prince.”</div>
+        <div class="section" data-start-image="103" data-end-image="108">“I don’t care if I go blind or not as long as the girl gets happy.” “Prince…”</div>
+        <div class="section" data-start-image="109" data-end-image="114">Looking at the Prince who had lost his eyes for people’s happiness, the swallow made a decision. “Prince, I won’t go
+        anywhere. I’ll stay with you. And I’ll be your eyes.”</div>
+        <div class="section" data-start-image="115" data-end-image="120">“Thank you, Mr. Swallow.” The swallow got to fly around the town and he told the Prince about the poor people’s lives he
+        saw.</div>
+        <div class="section" data-start-image="121" data-end-image="126">“Then, can you peel off all the gold on my body and give it to the poor people” “Yes, sir.”</div>
+        <div class="section" data-start-image="127" data-end-image="132">As he was told, the swallow peeled off the gold from the Prince’s body and brought it to the poor. After a while, there
+        was snow falling from the sky.</div>
+        <div class="section" data-start-image="133" data-end-image="138">At last, winter came. The swallow was so sensitive to the cold that he was chilled to the bone and couldn’t move.</div>
+        <div class="section" data-start-image="139" data-end-image="144">“I think this is it. Goodbye, Prince. I was happy to be of help to people." The swallow managed to kiss the Prince, he
+        finally died.</div>
+        <div class="section" data-start-image="145" data-end-image="150">Snap! At the same time, the Prince’s heart popped with sorrow.</div>
+        <div class="section" data-start-image="151" data-end-image="156">The next morning, the townspeople noticed that the statue of "the Prince of happiness" had gotten dirty. “Let’s melt the
+        Prince that’s no longer beautiful."</div>
+        <div class="section" data-start-image="157" data-end-image="162">Mysteriously, however, the Prince’s heart wasn’t melted at all no matter what they did. Then the heart of the Prince was
+        abandoned with the dead swallow beside him.</div>
+        <div class="section" data-start-image="163" data-end-image="168">Later on, God and an angel came to this town. “Angel, bring the most beautiful thing in this town,” God told the angel.</div>
+        <div class="section" data-start-image="169" data-end-image="174">In fact, what the angel brought was the Prince’s heart and the dead swallow. “Well done! These are exactly the most
+        beautiful things in this town. The Prince and the swallow really did good things. I’ll take these two to Heaven.”</div>
+        <div class="section" data-start-image="175" data-end-image="180">After all, the Prince and swallow who helped people and died went to Heaven and lived happily ever after.</div>
+    </div>
+    <script>
+        const dynamicImage = document.getElementById('dynamicImage');
+        const rightSections = document.querySelectorAll('.section');
+
+        let activeSection = null;
+        let currentImageIndex = 1;
+
+        function updateImage(section) {
+            const startImage = parseInt(section.getAttribute('data-start-image'), 10);
+            const endImage = parseInt(section.getAttribute('data-end-image'), 10);
+
+            currentImageIndex++;
+            if (currentImageIndex > endImage || currentImageIndex < startImage) {
+                currentImageIndex = startImage;
+            }
+
+            dynamicImage.src = `img${currentImageIndex}.png`;
+        }
+
+        setInterval(() => {
+            if (activeSection) {
+                updateImage(activeSection);
+            }
+        }, 1000); // 1秒ごとに画像を変更
+
+        document.querySelector('.right').addEventListener('scroll', () => {
+            let matchedSection = null;
+
+            rightSections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
+                    matchedSection = section;
+                }
+            });
+
+            if (matchedSection && matchedSection !== activeSection) {
+                activeSection = matchedSection;
+                const startImage = parseInt(activeSection.getAttribute('data-start-image'), 10);
+                currentImageIndex = startImage - 1; // セクション切り替え時にリセット
+            }
+        });
+    </script>
+</body>
+
+</html>
